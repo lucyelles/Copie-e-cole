@@ -13,6 +13,9 @@
       height: 100vh;
       margin: 0;
       background-color: #f0f0f0;
+      background-image: url('caminho/para/sua/imagem-de-fundo.jpg');
+      background-size: cover;
+      background-position: center;
     }
     .phone {
       width: 360px;
@@ -48,6 +51,10 @@
       height: 40px;
       background: #ccc;
       border-radius: 50%;
+    }
+    .logo {
+      width: 100px;
+      margin-bottom: 20px;
     }
     #pixKey {
       margin: 20px 0;
@@ -87,6 +94,7 @@
 <body>
 
 <div class="phone">
+  <img src="caminho/para/sua/logomarca.png" alt="Logomarca" class="logo">
   <p id="pixKey">2ae30c5e-a9f6-4c3a-8e1c-3e428e4e2974</p>
   <button id="copyButton" onclick="copyPixKey()">Copiar Chave Pix</button>
   <p class="success" id="successMessage">Chave Pix copiada com sucesso!</p>
