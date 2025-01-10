@@ -6,98 +6,72 @@
   <title>Copiar Chave Pix</title>
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
       background-color: #f0f0f0;
-      background-image: url('caminho/para/sua/imagem-de-fundo.jpg');
-      background-size: cover;
-      background-position: center;
     }
     .phone {
       width: 360px;
       height: 640px;
-      background: #03455D;
+      background-color: #03455D;
+      background: url('https://drive.google.com/uc?export=view&id=1AnEr_EwGGkp5a5acrrTCeioFmAsuFfPn') no-repeat center center;
+      background-size: cover;
       border-radius: 30px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+    }
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
       padding: 20px;
-      position: relative;
-    }
-    .phone::before {
-      content: '';
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 5px;
-      background: #ccc;
-      border-radius: 10px;
-    }
-    .phone::after {
-      content: '';
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 40px;
-      background: #ccc;
-      border-radius: 50%;
-    }
-    .logo {
-      width: 100px;
-      margin-bottom: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     #pixKey {
-      margin: 20px 0;
+      margin: 10px 0;
       font-size: 18px;
       color: #333;
-      word-break: break-all;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      background: #f9f9f9;
     }
     button {
       padding: 10px 20px;
       font-size: 16px;
-      background-color: #94712f;
+      background-color: #4CAF50;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s, transform 0.3s;
+      transition: background 0.3s;
     }
     button:hover {
-      background-color: #85662a;
-      transform: scale(1.05);
+      background-color: #45a049;
     }
     .success {
-      color: white;
+      color: #28a745;
       font-size: 14px;
       margin-top: 10px;
       display: none;
-    }
-    .copied {
-      background-color: #28a745 !important;
     }
   </style>
 </head>
 <body>
 
 <div class="phone">
-  <img src="caminho/para/sua/logomarca.png" alt="https://drive.google.com/file/d/1yZRCDXLxvLr2tPMTL3kdCC7XYStFwe6k/view" class="logo">
-  <p id="pixKey">2ae30c5e-a9f6-4c3a-8e1c-3e428e4e2974</p>
-  <button id="copyButton" onclick="copyPixKey()">Copiar Chave Pix</button>
-  <p class="success" id="successMessage">Chave Pix copiada com sucesso!</p>
+  <div class="container">
+    <p id="pixKey">123e4567-e89b-12d3-a456-426614174000</p>
+    <button onclick="copyPixKey()">Copiar Chave Pix</button>
+    <p class="success" id="successMessage">Chave Pix copiada com sucesso!</p>
+  </div>
 </div>
 
 <script>
@@ -105,12 +79,9 @@
     const pixKey = document.getElementById('pixKey').textContent;
     navigator.clipboard.writeText(pixKey).then(() => {
       const successMessage = document.getElementById('successMessage');
-      const copyButton = document.getElementById('copyButton');
       successMessage.style.display = 'block';
-      copyButton.classList.add('copied');
       setTimeout(() => {
         successMessage.style.display = 'none';
-        copyButton.classList.remove('copied');
       }, 3000);
     }).catch(err => {
       console.error('Erro ao copiar a chave Pix: ', err);
