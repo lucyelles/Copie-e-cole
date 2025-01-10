@@ -29,16 +29,6 @@
       justify-content: center;
       align-items: center;
     }
-    #pixKey {
-      margin: 20px 0;
-      font-size: 24px;
-      color: #333;
-      word-break: break-all;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      background: #f9f9f9;
-    }
     button {
       padding: 20px 40px;
       font-size: 24px;
@@ -67,14 +57,13 @@
 <body>
 
 <div class="container">
-  <p id="pixKey">2ae30c5e-a9f6-4c3a-8e1c-3e428e4e2974</p>
   <button id="copyButton" onclick="copyPixKey()">Copiar Chave Pix</button>
   <p class="success" id="successMessage">Chave Pix copiada com sucesso!</p>
 </div>
 
 <script>
   function copyPixKey() {
-    const pixKey = document.getElementById('pixKey').textContent;
+    const pixKey = '2ae30c5e-a9f6-4c3a-8e1c-3e428e4e2974';
     navigator.clipboard.writeText(pixKey).then(() => {
       const successMessage = document.getElementById('successMessage');
       const copyButton = document.getElementById('copyButton');
